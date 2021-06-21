@@ -19,8 +19,6 @@ final_dict_500 = []
 
 with open(args.file) as file:
     for index, line in enumerate(file.readlines()):
-        if index > 500:
-            break
         try:
             ip = re.search(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", line).group()
             method = re.search(r"(POST|GET|PUT|DELETE|HEAD)", line).group()
