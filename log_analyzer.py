@@ -74,3 +74,32 @@ result_dict = {
 with open("./result.json", "w") as f:
     s = json.dumps(result_dict, indent=4)
     f.write(s)
+result_dict = {
+    "Общее кол-во запросов": str(index),
+    "Кол-во запросов по адресам:": requests_count_dict,
+    "Кол-во запросов по методам:": methods_count_dict,
+    "Топ 10 запросов с которых были сделаны запросы:": top_count,
+    "Топ 10  самых долгих запросов:": top_long,
+    "Топ 10 запрос с клиентской ошибкой:": final_dict_400,
+    "Топ 10 запрос с серверной ошибкой:": final_dict_500
+}
+# result_dict = {
+#     "Общее кол-во запросов": str(index),
+#     "Кол-во запросов по адресам:": json.dumps(requests_count_dict, indent=4),
+#     "Кол-во запросов по методам:": json.dumps(methods_count_dict, indent=4),
+#     "Топ 10 запросов с которых были сделаны запросы:": json.dumps(top_count, indent=4),
+#     "Топ 10  самых долгих запросов:": json.dumps(top_long, indent=4),
+#     "Топ 10 запрос с клиентской ошибкой:": json.dumps(final_dict_400, indent=4),
+#     "Топ 10 запрос с серверной ошибкой:": json.dumps(final_dict_500, indent=4)
+# }
+
+with open("./result.json", "w") as f:
+    s = json.dumps(result_dict, indent=4)
+    f.write(s)
+
+# print("Общее кол-во запросов: " + str(index))
+# print("Кол-во запросов по адресам:" + json.dumps(requests_count_dict, indent=4))
+# print("Кол-во запросов по методам:" + json.dumps(methods_count_dict, indent=4))
+# print("Топ 10 запросов с которых были сделаны запросы:" + json.dumps(top_count, indent=4))
+# print("Топ 10  самых долгих запросов:" + json.dumps(top_long, indent=4))
+# print("Топ 10 запрос с клиентской ошибкой:" + json.dumps(final_dict_400, indent=4))
